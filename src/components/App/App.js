@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer';
 import Welcome from '../Welcome/Welcome';
 import Login from '../Login/Login';
 import '../../App.css';
+import Signup from '../Signup/Signup';
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Welcome />
         <Landing />
         <Login />
+        <Signup />
 
         <Footer />
       </div>
