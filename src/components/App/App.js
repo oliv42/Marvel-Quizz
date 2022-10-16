@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../Header/Header";
 import Landing from "../Landing/Landing";
 import Footer from "../Footer/Footer";
@@ -13,27 +13,18 @@ const App = () => {
     return (
         <BrowserRouter>
             <Header />
-            <Switch>
-                <Route exact path="/"> 
-                    <Landing />
-                </Route>
-                <Route path="/welcome">
-                    <Welcome />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/signup">
-                    <Signup />
-                </Route>
-                <Route>
-                    <ErrorPage />
-                </Route> 
-            </Switch>
+
+            <Routes>
+                <Route path="/" element={<Landing />} />
+                <Route path="/welcome" element={<Welcome />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="*" element={<ErrorPage />} />
+            </Routes>
 
             <Footer />
         </BrowserRouter>
-    );  
+    );
 };
 
 export default App;
