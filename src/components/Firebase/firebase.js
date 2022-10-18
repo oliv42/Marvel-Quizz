@@ -1,23 +1,23 @@
 import {initializeApp} from 'firebase/app';
 import { getAuth } from "firebase/auth";
-
+require('dotenv').config()
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyDg4eAb0eF2saUozTCg9qRBcTTg-XnPtIA",
+    apiKey: process.env.APP_ID,
   
-    authDomain: "marvel-quiz-25bd9.firebaseapp.com",
+    authDomain: process.env.AUTH_DOMAIN,
     
-    projectId: "marvel-quiz-25bd9",
+    projectId: process.env.PROJECT_ID,
   
-    storageBucket: "marvel-quiz-25bd9.appspot.com",
+    storageBucket: process.env.STORAGE_BUCKET,
   
-    messagingSenderId: "297211980433",
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
   
-    appId: "1:297211980433:web:77aec6f8b2e070c28ead30"
+    appId: process.env.APP_ID
   
   };
   
   const app = initializeApp(firebaseConfig);
 
- export     const auth = getAuth(app)   
+ export const auth = getAuth(app)   
