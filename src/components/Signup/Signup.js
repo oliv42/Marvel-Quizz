@@ -1,7 +1,7 @@
 // Firebase 9 
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../Firebase/firebase';
+import { auth } from '../Firebase/firebaseConfig';
 
 const Signup = (props) => {
 
