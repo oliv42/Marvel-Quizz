@@ -1,7 +1,7 @@
 // Firebase 9 
 import React, { useState } from 'react';
-// import { createUserWithEmailAndPassword } from "firebase/auth";
-// import { auth } from '../Firebase/firebase';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../Firebase/firebase';
 
 const Signup = (props) => {
 
@@ -21,15 +21,15 @@ const Signup = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // const { email, password } = loginData;
-        // createUserWithEmailAndPassword(auth, email, password)
-        // .then(user => {
-        //     setLoginData({...data});
-        // })
-        // .catch(error => {
-        //     setError(error);
-        //     setLoginData({...data});
-        // })
+        const { email, password } = loginData;
+        createUserWithEmailAndPassword(auth, email, password)
+        .then(user => {
+            setLoginData({...data});
+        })
+        .catch(error => {
+            setError(error);
+            setLoginData({...data});
+        })
     }
 
     const { pseudo, email, password, confirmPassword } = loginData;
